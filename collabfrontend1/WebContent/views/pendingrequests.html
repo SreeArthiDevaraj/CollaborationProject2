@@ -1,0 +1,16 @@
+<span ng-if="pendingRequests.length==0"><b> No Pending Requests</b></span>
+
+<table class="table table-striped">
+<tbody>
+<tr ng-repeat="request in pendingRequests">
+
+<td><img src="http://localhost:8088/collabmiddleend/getimage/{{request.fromId}}"class="img-circle" alt="Image Not Available" height="30px" width="30px"/></td>
+<td>{{request.fromId}}</td>
+<!-- <td><img src="http://localhost:8088/collabmiddleend/getimage/{{request.toId}}"class="img-circle" alt="Image Not Available" height="30px" width="30px"/></td>
+<td>{{request.toId}}</td> -->
+<td><a class="btn btn-primary" ng-click="updatePendingRequest(request,'A')">Accept Friend Request</a></td>
+<td><a class="btn btn-warning" ng-click="updatePendingRequest(request,'D')">Reject Friend Request</a></td>
+</tr>
+</tbody>
+
+</table>

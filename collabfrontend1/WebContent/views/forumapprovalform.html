@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <form>
+
+<div class="container">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">{{forum.forumTitle}} 
+    <span style="float:right;"><img ng-src="http://localhost:8088/collabmiddleend/getimage/{{forum.postedBy.username}}"class="img-circle" height="30px" width="30px" /></span>
+    
+    <span ><strong>By:</strong>{{forum.postedBy.username}}</span>
+<span ><strong>on:</strong>{{forum.postedOn| date:'medium'}}</span>
+	</div>
+   <!--  <span><strong>Created By:</strong>{{blogPost.postedBy.username}}</span>
+<span ><strong>on:</strong>{{blogPost.postedOn| date:'medium'}}</span> -->
+    <div class="panel-body">  {{forum.forumContent}}</div>
+  
+  </div>
+</div>
+<div class="form-group">
+			<input type="radio" ng-model="forum.approved" value="true" ng-click="showRejectionTxt(false)">Approve
+
+				<input type="radio" ng-model="forum.approved" value="false" ng-click="showRejectionTxt(true)">Reject
+<p ng-show="isRejected">
+<textarea rows="5" cols="20" ng-model="forum.rejectionReason"> </textarea>
+</p>
+</div>
+<button type="button"  class="btn btn-success" value="update" ng-click="updateForum()">Update</button>
+</form>
+</div>
+
+</body>
+</html>
+
+       
+    
+
+
+

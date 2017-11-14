@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body{
+		 margin: 0;
+  		padding-top: 0;
+      
+  }
+  .custab {
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin: 5% 0;
+	box-shadow: 3px 3px 2px #ccc;
+	transition: 0.5s;
+}
+.custab:hover {
+	box-shadow: 3px 3px 0px transparent;
+	transition: 0.5s;
+}
+  </style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+  <span style='color:red'>{{error}}</span><form>
+<div class="form-group">
+<label>Enter the value for JobTitle</label>
+<input type="text" ng-model="job.jobTitle" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Enter the value for JobDescription</</label>
+<textarea ng-model="job.jobDescription" class="form-control"></textarea>
+</div>
+
+<div class="form-group">
+<label>Enter the value for SkillsRequired</label>
+<input type="text" ng-model="job.skillsRequired" class="form-control">
+</div>
+<div class="form-group">
+<label>Enter the value for Salary </label>
+<input type="text" ng-model="job.salary" class="form-control">
+</div>
+<div class="form-group">
+<label>Enter the value for Location"</label>
+<input type="text" ng-model="job.location" class="form-control">
+</div>
+<div class="form-group">
+<label>Enter the value for Companyname </label>
+<input type="text" ng-model="job.companyname" class="form-control">
+</div>
+<input type="submit" class="btn btn-info" value="Add Job" ng-click="addJob()">
+</form>
+</div>
+
+</body>
+</html>

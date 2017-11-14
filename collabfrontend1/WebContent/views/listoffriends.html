@@ -1,0 +1,333 @@
+<!-- {{friends}}
+<table class="table table-sm">
+<tbody>
+<h2>List of Friends</h2>
+<tr ng-repeat="user in friends">
+<td><img src="http://localhost:8088/collabmiddleend/getimage/{{user}}"class="img-circle" alt="Image Not Available" height="30px" width="30px"/></td>
+<td>{{user}}</td>
+
+
+</tr>
+</tbody>
+</table> -->
+<html>
+<head>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
+ <style>
+@import url('https://fonts.googleapis.com/css?family=Karla');
+*{
+  margin:0;
+  padding:0;
+}
+
+*{
+  margin:0;
+  padding:0;
+   
+}
+
+
+  
+ 
+  
+
+
+.main {
+  box-sixing: border-box;
+  width:100%;
+  max-width: 300px;
+  margin: 40px auto 0 auto;
+  border-radius:8px;
+  padding: 35px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.20);
+ 
+ }
+
+.main h1{
+  font-size:20px;
+  text-transform:uppercase;
+  text-align: center;
+  font-weight:bold;
+  margin-bottom: 15px;
+  margin-top:-10px;
+}
+
+.form-container {
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form {
+  width: 83%;
+  padding: 10px;
+}
+
+input {
+  box-sizing:border-box;
+  height:33px;
+  border-radius:5px;
+  border:none;
+  padding:5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:focus {
+  outline:none;
+}
+
+input[type='text']{
+  color:white;
+  text-size: 12px;
+  padding-left:10px;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+color: white !important;
+}
+ 
+input[type="text"]:-moz-placeholder { /* Firefox 18- */
+color: white !important;  
+}
+ 
+input[type="text"]::-moz-placeholder {  /* Firefox 19+ */
+color: white !important;  
+}
+ 
+input[type="text"]:-ms-input-placeholder {  
+color: white !important;  
+}
+
+.form-btn {
+  width: 11%;
+  border-radius: 5px;
+  border:none;
+  color:white;
+  font-size: 20px;
+  padding-bottom:4px;
+}
+
+.table-wrapper {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+table {
+  font-size: 18px;
+  font-weight:light;
+  width:100%;  
+  border-spacing: 0; 
+  
+}
+
+
+table tr {
+  background-color:#367EF5;
+  padding:5px;
+  valign:middle;
+  height:33px;
+}
+
+table tr:nth-child(even) {
+  background-color:#4287F8
+}
+
+table td {
+  padding:5px 10px 5px 10px;
+}
+
+.new-friend {
+  background-color:#FA4496; 
+}
+
+.search {
+  background-color:#FCA449;
+  width: 100%;
+}
+
+#grad {
+  background: #551FA1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-200deg, #551FA1, #711BAB, #5A1297); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-200deg, #605B9C, #711BAB, #5A1297); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-200deg, #551FA1, #711BAB, #5A1297); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-200deg, #551FA1, #711BAB, #5A1297); /* Standard syntax */
+}
+
+#trash-btn {
+  height:33px;
+  width:21px;
+  background-color: transparent;
+  background-image: url("http://cathodg.es/wp-content/uploads/2017/09/xvbIigE.png");
+  background-size: 21px;
+  background-repeat: no-repeat;
+  border:none;
+}
+
+
+
+.main {
+  box-sixing: border-box;
+  width:100%;
+  max-width: 300px;
+  margin: 40px auto 0 auto;
+  border-radius:8px;
+  padding: 35px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.20);
+ }
+
+.main h1{
+  font-size:20px;
+  text-transform:uppercase;
+  text-align: center;
+  font-weight:bold;
+  margin-bottom: 15px;
+  margin-top:-10px;
+}
+
+.form-container {
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form {
+  width: 83%;
+  padding: 10px;
+}
+
+input {
+  box-sizing:border-box;
+  height:33px;
+  border-radius:5px;
+  border:none;
+  padding:5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:focus {
+  outline:none;
+}
+
+input[type='text']{
+  color:white;
+  text-size: 12px;
+  padding-left:10px;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+color: white !important;
+}
+ 
+input[type="text"]:-moz-placeholder { /* Firefox 18- */
+color: white !important;  
+}
+ 
+input[type="text"]::-moz-placeholder {  /* Firefox 19+ */
+color: white !important;  
+}
+ 
+input[type="text"]:-ms-input-placeholder {  
+color: white !important;  
+}
+
+.form-btn {
+  width: 11%;
+  border-radius: 5px;
+  border:none;
+  color:white;
+  font-size: 20px;
+  padding-bottom:4px;
+}
+
+.table-wrapper {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+table {
+  font-size: 18px;
+  font-weight:light;
+  width:100%;  
+  border-spacing: 0; 
+}
+
+
+table tr {
+  background-color:#367EF5;
+  padding:5px;
+  valign:middle;
+  height:33px;
+}
+
+table tr:nth-child(even) {
+  background-color:#4287F8
+}
+
+table td {
+  padding:5px 10px 5px 10px;
+}
+
+
+.flex-container {
+  display: flex;
+ 
+  
+}
+
+.search {
+display: flex;
+  background-color:#FCA449;
+  width: 100%;
+}
+
+#grad {
+  background: #551FA1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-200deg, #551FA1, #711BAB, #5A1297); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-200deg, #605B9C, #711BAB, #5A1297); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-200deg, #551FA1, #711BAB, #5A1297); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-200deg, #551FA1, #711BAB, #5A1297); /* Standard syntax */
+}
+
+#trash-btn {
+  height:33px;
+  width:21px;
+  background-color: transparent;
+  background-image: url("http://cathodg.es/wp-content/uploads/2017/09/xvbIigE.png");
+  background-size: 21px;
+  background-repeat: no-repeat;
+  border:none;
+}
+
+
+</style>
+ </head>
+
+  <div class="flex-container">
+
+
+  
+
+  <div class="table-wrapper">
+  <table class="table">
+    <tr ng-repeat="user in friends" class="table-row" valign="middle" height="33px">
+      <h1>List of Friends</h1>
+    
+     <td><img src="http://localhost:8088/collabmiddleend/getimage/{{user}}"class="img-circle" alt="Image Not Available" height="30px" width="30px"/></td>
+<td>{{user}}</td>
+      
+    </tr>
+  </table>
+  </div>   
+  </div>   
+</div>
+
+
+</body>
+
+</html>

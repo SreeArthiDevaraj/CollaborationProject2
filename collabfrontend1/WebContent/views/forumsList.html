@@ -1,0 +1,47 @@
+
+<div  ng-show="currentUser.role=='ADMIN'">
+<b>  List of Forums Waiting For Approval   </b>
+<table class="table  table-bordered table-striped">
+<thead>
+
+<tr>
+<th>Forum Title</th>
+<th>Author</th>
+<th>Posted On</th
+></tr>
+</thead>
+<tbody>
+<tr ng-repeat=" forum in listofForumsWaitingForApproval">
+<td><a href="#!getapprovalform/{{forum.id}}">{{forum.forumTitle}}</a></td>
+
+<td>{{forum.postedBy.username}}</td>
+<td>{{forum.postedOn| date:'MM/dd/yyyy HH:mm'}}</td>
+</tr>
+</tbody>
+
+</table>
+</div>
+
+
+
+
+
+
+
+<div>
+<b> List of Forums Approved</b>
+<table  class="table table-bordered table-striped">
+<thead>
+
+<tr><th>Forum Title</th><th>Author</th><th>Posted On</th></tr>
+<tbody>
+<tr ng-repeat=" forum in listofForumsApproved">
+<td><a href="#!getforumbyid/{{forum.id}}">{{forum.forumTitle}}</a></td>
+<td>{{forum.postedBy.username}}</td>
+<td>{{forum.postedOn| date:'MM/dd/yyyy'}}</td>
+</tr>
+
+</tbody>
+</thead>
+</table>
+</div>

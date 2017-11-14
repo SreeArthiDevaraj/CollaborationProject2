@@ -1,0 +1,64 @@
+ <style>
+ body{
+ margin:0;
+ }
+  .don{
+  width:30%;
+  text-align:left;
+  border:2px solid blue;
+  margin: 5px 10px;
+  
+  }</style>
+<div class="container">
+<div>
+<div class="panel panel-success">
+<div class="panel-heading">
+<div> <span style="float:right;"><img ng-src="http://localhost:8088/collabmiddleend/getimage/{{forum.postedBy.username}}"class="img-circle" height="30px" width="30px" /></span>
+
+{{forum.forumTitle}}
+
+    </div>
+
+<span><strong>Created By:</strong>{{forum.postedBy.username}}</span>
+<span ><strong>on:</strong>{{forum.postedOn| date:'medium'}}</span>
+<a href="" ng-click="joinForum()" style="float:right; margin-right: 10px;" class="btn btn-xs btn-info" ng-if="participant.reqstatus == false ||isparticipant!=true  ">Join Forum</a>
+</div>
+<div class="panel-body"> {{forum.forumContent}}</div>
+</div>
+</div>
+<a style="text-align:left;" class="btn btn-info btn-lg" ng-if=" participant.reqstatus == true ||  isparticipant!=true "><span class="glyphicon glyphicon-thumbs-up" ng-class="isLiked?'liked':'default'" ng-click="updateLikes()" ></span>{{forum.likes}}Likes</a>  
+ <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-if="participant.reqstatus == true ||isparticipant !=true" >Comments</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Comments</h4>
+        </div>
+        <div class="modal-body">
+         <textarea rows="4" cols="30" ng-model="forumComment.commentText"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="addCommentforforum()">POST COMMENT</button>
+        </div>
+      </div>
+     
+    </div>
+    
+  </div> 
+ 
+</div>
+
+<p ng-if="isparticipant==true && participant.reqstatus == true"> Comments</p>
+ <div class="don" ng-repeat="comment in forumComments" ng-if="isparticipant==true && participant.reqstatus == true">
+    <ul>
+  <li >
+  <div> {{comment.commentText}}</div> 
+  <span style="float:left;"><img ng-src="http://localhost:8088/collabmiddleend/getimage/{{comment.commentedBy.username}}"class="img-circle" height="30px" width="30px" /></span>
+ <span> <strong>by:</strong>{{comment.commentedBy.username}}</span>
+<span><strong>On:</strong>{{comment.commentedOn|date:'medium'}}</span>
+  </li>
+</ul>
+		</div>
